@@ -1,0 +1,93 @@
+Lanzada por el usuario Kelly Judith Gutierrez De La Cruz
+[Pipeline] Start of Pipeline
+[Pipeline] node
+Running on Jenkins  in C:\ProgramData\Jenkins\.jenkins\workspace\Sistema-Avicola-CI
+[Pipeline] {
+[Pipeline] stage
+[Pipeline] { (Inicio)
+[Pipeline] echo
+Sistema Avícola - Integración Continua
+[Pipeline] }
+[Pipeline] // stage
+[Pipeline] stage
+[Pipeline] { (Clonar Repositorio)
+[Pipeline] git
+The recommended git tool is: NONE
+No credentials specified
+ > git.exe rev-parse --resolve-git-dir C:\ProgramData\Jenkins\.jenkins\workspace\Sistema-Avicola-CI\.git # timeout=10
+Fetching changes from the remote Git repository
+ > git.exe config remote.origin.url https://github.com/JhazminR/ProyectoFinal1GRUPO3-Avicola.git # timeout=10
+Fetching upstream changes from https://github.com/JhazminR/ProyectoFinal1GRUPO3-Avicola.git
+ > git.exe --version # timeout=10
+ > git --version # 'git version 2.49.0.windows.1'
+ > git.exe fetch --tags --force --progress -- https://github.com/JhazminR/ProyectoFinal1GRUPO3-Avicola.git +refs/heads/*:refs/remotes/origin/* # timeout=10
+ > git.exe rev-parse "refs/remotes/origin/main^{commit}" # timeout=10
+Checking out Revision 977ae6fe1ff3d8472b1a5a0ab7b2e8d2a26242df (refs/remotes/origin/main)
+ > git.exe config core.sparsecheckout # timeout=10
+ > git.exe checkout -f 977ae6fe1ff3d8472b1a5a0ab7b2e8d2a26242df # timeout=10
+ > git.exe branch -a -v --no-abbrev # timeout=10
+ > git.exe branch -D main # timeout=10
+ > git.exe checkout -b main 977ae6fe1ff3d8472b1a5a0ab7b2e8d2a26242df # timeout=10
+Commit message: "Conflicto resuelto"
+ > git.exe rev-list --no-walk 977ae6fe1ff3d8472b1a5a0ab7b2e8d2a26242df # timeout=10
+[Pipeline] }
+[Pipeline] // stage
+[Pipeline] stage
+[Pipeline] { (Verificar Archivos)
+[Pipeline] bat
+
+C:\ProgramData\Jenkins\.jenkins\workspace\Sistema-Avicola-CI>dir
+ El volumen de la unidad C no tiene etiqueta.
+ El n�mero de serie del volumen es: B271-D134
+
+ Directorio de C:\ProgramData\Jenkins\.jenkins\workspace\Sistema-Avicola-CI
+
+19/06/2026  00:30    <DIR>          .
+19/06/2026  00:30    <DIR>          ..
+19/06/2026  00:30                40 .gitattributes
+19/06/2026  00:30               427 .gitignore
+19/06/2026  00:30    <DIR>          .mvn
+19/06/2026  00:30    <DIR>          assets
+19/06/2026  00:30                93 CHANGELOG.md
+19/06/2026  00:30    <DIR>          docs
+19/06/2026  00:30            11,790 mvnw
+19/06/2026  00:30             8,481 mvnw.cmd
+19/06/2026  00:30             3,521 pom.xml
+19/06/2026  00:30             1,280 README.md
+19/06/2026  00:30    <DIR>          src
+19/06/2026  00:30                46 txtdiego.txt
+               8 archivos         25,678 bytes
+               6 dirs  246,509,924,352 bytes libres
+[Pipeline] }
+[Pipeline] // stage
+[Pipeline] stage
+[Pipeline] { (Mostrar Ultimo Commit)
+[Pipeline] bat
+
+C:\ProgramData\Jenkins\.jenkins\workspace\Sistema-Avicola-CI>git log -1 
+commit 977ae6fe1ff3d8472b1a5a0ab7b2e8d2a26242df
+Merge: 84ed382 3528925
+Author: Jhazmin <jhazmin_1606@hotmail.com>
+Date:   Wed Apr 29 01:17:30 2026 -0500
+
+    Conflicto resuelto
+[Pipeline] }
+[Pipeline] // stage
+[Pipeline] stage
+[Pipeline] { (Validar pom.xml)
+[Pipeline] bat
+
+C:\ProgramData\Jenkins\.jenkins\workspace\Sistema-Avicola-CI>if exist pom.xml (echo pom.xml encontrado )  else (exit 1 ) 
+pom.xml encontrado
+[Pipeline] }
+[Pipeline] // stage
+[Pipeline] stage
+[Pipeline] { (Finalización)
+[Pipeline] echo
+Repositorio clonado correctamente
+[Pipeline] }
+[Pipeline] // stage
+[Pipeline] }
+[Pipeline] // node
+[Pipeline] End of Pipeline
+Finished: SUCCESS
