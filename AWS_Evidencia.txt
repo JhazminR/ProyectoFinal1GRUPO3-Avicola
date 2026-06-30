@@ -1,0 +1,9 @@
+Configuración de Infraestructura en AWS - Grupo 3
+
+- Bucket S3 creado: prototipo-avicola-utp-2026
+- Región: us-east-1 (Norte de Virginia)
+- Enlace público al Prototipo (Login): https://prototipo-avicola-utp-2026.s3.us-east-1.amazonaws.com/01-login.PNG
+- Usuario IAM de colaboración creado: grupo3-colaborador
+- Contraseña: utpclass12345+
+
+Aporte realizado por: Cristhian Vasquez
